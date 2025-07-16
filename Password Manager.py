@@ -26,13 +26,13 @@ class PasswordManager:
         while name in self.data:
             name = input("User name exist enter a valid username: ")
 
-        password = input("Enter the Password: ").encode()
-        encryptedPassword = self.cipher.encrypt(password)
-
-        self.data[name] = encryptedPassword
-        self.data = dict(sorted(self.data.items()))
-
-        print("New User Registered Successfully")
+            password = input("Enter the Password: ").encode()
+            encryptedPassword = self.cipher.encrypt(password)
+    
+            self.data[name] = encryptedPassword
+            self.data = dict(sorted(self.data.items()))
+    
+            print("New User Registered Successfully")
 
     def getUserName(self):
         username = input("Enter the Username: ")
